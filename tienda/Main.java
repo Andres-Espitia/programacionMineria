@@ -4,6 +4,7 @@ public class Main {
     int producto, cantidad;
      static void menu1() {
          int producto, cantidad, opc;
+         int[][] carrito;
          for (int i = 0; i < 6; ) {
              Scanner teclado = new Scanner(System.in);
              System.out.println("Catalogo tienda TEC");
@@ -19,13 +20,7 @@ public class Main {
              if (producto <= 6 && producto >= 1) {
                  System.out.println("Ingrese la cantidad que desa comprar: ");
                  cantidad = teclado.nextInt();
-                 int compra[] = {producto, cantidad};
-                 for (int j = 0; j < 1; ) {
-                     int carrito[][];
-                     if (false) {
-
-                     }
-                 }
+                 int[] compra = {producto, cantidad};
              }else{
                  System.out.println("Opción no valida, por favor ingrese otra: ");
                  try{
@@ -36,6 +31,8 @@ public class Main {
                  }
                  menu1();
              }
+
+
              i = producto;
              opc = producto;
              if (opc == 6){
@@ -47,6 +44,7 @@ public class Main {
      }
 
     static void factura(int carrito){
+
 
     }
     boolean salida(){
