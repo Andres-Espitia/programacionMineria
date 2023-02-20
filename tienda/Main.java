@@ -3,10 +3,14 @@ import java.util.Scanner;
 public class Main {
     int producto, cantidad;
      static void menu1() {
-         int producto, cantidad, opc;
-         int[][] carrito;
-         for (int i = 0; i < 6; ) {
-             Scanner teclado = new Scanner(System.in);
+         Scanner teclado = new Scanner(System.in);
+         int producto, cantidad, opc, numProducto;
+         int[] carrito = new int[2];
+         int[][] compra;
+         System.out.println("Numero de productos que desea comprar: ");
+         numProducto = teclado.nextInt();
+         compra = new int[1][numProducto];
+         do{
              System.out.println("Catalogo tienda TEC");
              System.out.println("1. Mouse -- $45000");
              System.out.println("2. Teclados -- $60000");
@@ -20,7 +24,24 @@ public class Main {
              if (producto <= 6 && producto >= 1) {
                  System.out.println("Ingrese la cantidad que desa comprar: ");
                  cantidad = teclado.nextInt();
-                 int[] compra = {producto, cantidad};
+                 carrito[0]= 0;
+                for(int l = 0; l < 2; l ++) {
+                    if (carrito[l] == 0) {
+                        carrito[0] = cantidad;
+                    } else {
+                        carrito[1] = producto;
+                    }
+                }
+
+                for (int j = 0; j < 1; j++){
+                    for (int k = 0; k < numProducto; k++){
+                        if(compra[j][k] != 0){
+
+                        }
+                    }
+                    compra = compra;
+                }
+
              }else{
                  System.out.println("Opción no valida, por favor ingrese otra: ");
                  try{
@@ -31,19 +52,18 @@ public class Main {
                  }
                  menu1();
              }
-
-
-             i = producto;
              opc = producto;
              if (opc == 6){
-                 factura();
+                 int l = 1;
+                 factura(l);
              }else {
-                 System.out.println("prueba");
+                 continue;
              }
-         }
+         }while(true);
+
      }
 
-    static void factura(int carrito){
+    static void factura(int l){
 
 
     }
@@ -63,7 +83,7 @@ public class Main {
         if (opc1 == 1){
             menu1();
         }else if(opc1 == 2){
-            System.out.println("gracias y no vuelva si no va a1 comprar");
+            System.out.println("gracias y no vuelva si no va a comprar");
         }
     }
 }
